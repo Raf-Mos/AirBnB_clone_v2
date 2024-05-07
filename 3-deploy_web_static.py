@@ -8,7 +8,7 @@ execute: fab -f 3-deploy_web_static.py deploy -i ~/.ssh/id_rsa -u ubuntu
 from fabric.api import env, local, put, run
 from datetime import datetime
 from os.path import exists, isdir
-env.hosts = ['54.234.83.58', '35.153.79.158']
+env.hosts = ['54.87.106.95', '100.25.10.97']
 
 
 def do_pack():
