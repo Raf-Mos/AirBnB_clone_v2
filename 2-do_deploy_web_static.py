@@ -5,7 +5,7 @@ Fabfile to server
 from fabric.api import local, env, put, run
 from os.path import isfile
 
-env.hosts = ["54.209.3.37", "54.208.177.196"]
+env.hosts = ["54.87.106.95", "100.25.10.97"]
 
 
 def do_pack():
