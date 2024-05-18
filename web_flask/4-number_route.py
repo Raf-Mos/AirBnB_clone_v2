@@ -35,9 +35,9 @@ def python_text(text):
     return f"Python {text}"
 
 
-@app.route('/python/<int:n>', strict_slashes=False)
-def python_int(n):
-    """ Print Python + int input """
+@app.route('/number/<int:n>', strict_slashes=False)
+def number_n(n):
+    """ Print number + int input """
     return f"{n} is a number"
 
 
