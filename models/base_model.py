@@ -50,14 +50,15 @@ class BaseModel:
         dictio = {}
         dictio.update(self.__dict__)
 
-        if (dictio.get("_sa_instance_state")):
-            dictio.pop("_sa_instance_state")
-
         dictio.update(
                 {'__class__':
                     (str(type(self)).split('.')[-1]).split('\'')[0]})
         dictio['created_at'] = self.created_at.isoformat()
         dictio['updated_at'] = self.updated_at.isoformat()
+
+        if "_sa_instance_state" in dictio.keys():
+            del dictio['_sa_instance_state']
+
         return dictio
 
     def delete(self):
