@@ -22,7 +22,7 @@ def states_list():
 @app.teardown_appcontext
 def teardown(exception):
     """ Remove the current SQLAlchemy Session """
-    storage.close()
+    return storage.close()
 
 
 if __name__ == "__main__":
