@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
 starts a Flask web application
-/states_list: display a HTML page
 """
 from flask import Flask, render_template
 from models import storage
@@ -11,20 +10,20 @@ from models.state import State
 app = Flask(__name__)
 
 
-@app.route('/states_list', strict_slashes=False)
+@app.route('/cities_by_states', strict_slashes=False)
 def states_list():
     """
-    /states_list: display a HTML page: (inside the tag BODY)
+    /cities_by_states: display a HTML page: (inside the tag BODY)
     """
     states = storage.all(State)
 
-    return render_template('7-states_list.html', states=states)
+    return render_template('8-cities_by_states.html', states=states)
 
 
 @app.teardown_appcontext
 def teardown(exception):
     """ Remove the current SQLAlchemy Session """
-    return storage.close()
+    storage.close()
 
 
 if __name__ == "__main__":
